@@ -316,12 +316,16 @@ section {
 
 .playlist-images {
   display: flex;
-  width: 100%;
   a + a {
     margin-left: 20px;
   }
-}
+  a {
 
+  width: 200px;
+  height: 200px;
+
+  }
+}
 .playlist-info {
   display: flex;
   align-items: center;

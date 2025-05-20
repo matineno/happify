@@ -6,15 +6,14 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const token = useSpotifyToken();
   const playlistsId = [
-    "37i9dQZF1EVJHK7Q1TBABQ",
-    "37i9dQZF1EVHGWrwldPRtj",
-    "37i9dQZF1EQqFPe2ux3rbj",
-    "37i9dQZF1EQmPV0vrce2QZ",
-    "37i9dQZF1EQn2GRFTFMl2A",
-    "37i9dQZF1EQn4jwNIohw50",
-    "37i9dQZF1EVKuMoAJjoTIw",
-    "37i9dQZF1EIZcnqglfTgGu",
-    "37i9dQZF1EQqedj0y9Uwvu",
+    "0kHzBtoH1jc0gxoczQGqFr",
+    "4Sx7lGh5E60jagtCMkERJ3",
+    "7jHyvYBb2wHlfhB8Jy0fMi",
+    "2SM6rniZl84fEyMCB5KMQB",
+    "5bFy3kAaPdZcisE340Rfdm",
+    "2fr6RIECuS6iqRSGuz6N8g",
+    "1FROg3Jj1PACIRgkTlIEih",
+    "4eEvBVP6omEoCP8hSAp4Dt"
   ];
 
   const [playlistsData, setPlaylistsData] = useState({});
@@ -91,11 +90,11 @@ const Home = () => {
       <h1>Home</h1>
       <h3>Top Picks for You</h3>
 
-      <div className="flex">
+      <div className="flex space-between">
         <button onClick={handlePrevious} disabled={currentIndex === 0}>
           <GrPrevious />
         </button>
-        <div className="playlist-images">
+        <div className="playlist-images flex center">
           {currentPlaylists.map((playlistId) => {
             const playlist = playlistsData[playlistId];
             if (!playlist) return null;
@@ -110,6 +109,7 @@ const Home = () => {
                   <img
                     src={playlist.image}
                     alt={`Playlist ${playlist.name}`}
+                    className="playlist-image"
                   />
                 </div>
               </Link>
